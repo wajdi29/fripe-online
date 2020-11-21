@@ -11,7 +11,7 @@ const HomePage = () => (
     </div>
     <div className='menu-item'>
     <div className="content">
-    <h1 className="title">JACKETS</h1>
+    <h1 className="title">JACKETS and Sweaters</h1>
     <span className="subtitle">Shop Now</span>
     </div>
     </div>

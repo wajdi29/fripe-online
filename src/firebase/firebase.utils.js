@@ -17,9 +17,8 @@ const config = {
   export const createUserProfileDocument = async (userAuth, additionalData) => {
       if (!userAuth) {
         return 
-      } else {
-        
-      }
+      } 
+      
 
   }
 
@@ -30,7 +29,5 @@ const config = {
 
  const provider = new firebase.auth.GoogleAuthProvider();
   provider.setCustomParameters({prompt: 'select_account'});
-
-  export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
   export default firebase;

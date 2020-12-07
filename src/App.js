@@ -10,7 +10,7 @@ import ShopPage from './pages/shop/shop.component'
 import Header from './components/header/header.component'
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import { createStructuredSelector } from 'reselect'
-import { auth, createUserProfileDocument} from './firebase/firebase.utils'
+import { auth, createUserProfileDocument } from './firebase/firebase.utils'
 import { selectCurrentUser } from './redux/user/user.selectors'
 
 
@@ -18,7 +18,7 @@ class App extends React.Component {
   unsubscribeFromAuth = null
 
   componentDidMount() {
-    const { setCurrentUser} = this.props
+    const { setCurrentUser } = this.props
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth)
@@ -31,7 +31,8 @@ class App extends React.Component {
       }
       else {
         setCurrentUser(userAuth)
-        addCollectionAndDocuments('collections', collectionsArray.map(({title, items}) => ({title, items}) ))
+        // addCollectionAndDocuments('collections', collectionsArray.map(({ title, items }) => ({ title, items })));
+
       }
     })
   }
